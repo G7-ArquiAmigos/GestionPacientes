@@ -21,7 +21,7 @@ def pacientes_view(request):
         paciente.dto = pl.create_paciente(json.loads(request.body))
         paciente = serializers.serialize('json', [paciente_dto,])
         return HttpResponse(paciente, 'application/json')
-
+@csrf_exempt
 def paciente_view(request,pk):
     if request.method == 'GET':
         paciente_dto = pl.get_paciente(pk)
@@ -33,4 +33,17 @@ def paciente_view(request,pk):
         paciente = serializers.serialize('json', [paciente_dto,])
         return HttpResponse(paciente, 'application/json')
     
-    
+from django.http import JsonResponse
+from paciente.eeg.eeg_service import procesar_eeg_para_paciente
+@csrf_exempt
+def analizar_eeg_view(request, paciente_id):
+    try:
+        resultado = procesar_eeg_para_paciente(paciente_id)
+        return JsonResponse({
+            "message": "EEG procesado",
+            "diagnosis": resultado.diagnosis,
+            "confidence": resultado.confidence,
+            "timestamp": resultado.timestamp
+        })
+    except Exception as e:
+        return JsonResponse({"error": str(e)}, status=500)

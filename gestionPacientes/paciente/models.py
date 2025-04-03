@@ -12,3 +12,11 @@ class Paciente(models.Model):
 
     def __str__(self):
         return '%s' % (self.nombre)
+    
+
+class ResultadoEEG(models.Model):
+    paciente = models.ForeignKey(Paciente, on_delete=models.CASCADE)
+    eeg_id = models.IntegerField()
+    diagnosis = models.CharField(max_length=100)
+    confidence = models.FloatField()
+    timestamp = models.DateTimeField()
