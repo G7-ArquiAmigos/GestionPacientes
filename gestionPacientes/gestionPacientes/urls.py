@@ -22,7 +22,7 @@ urlpatterns = [
     path('gestionPacientes/home/', views.index, name='home'),
     path('gestionPacientes/pacientes/', include('paciente.urls')),
     path('gestionPacientes/', views.index),
-    path('gestionPacientes/'r'', include('django.contrib.auth.urls')),
-    path('gestionPacientes/'r'', include('social_django.urls' , namespace='social')),
+    path(r'', include('django.contrib.auth.urls')),
+    path(r'', include('social_django.urls' , namespace='social')),
     path('gestionPacientes/login/auth0/', views.auth0_login, name='auth0_login'),
 ]
