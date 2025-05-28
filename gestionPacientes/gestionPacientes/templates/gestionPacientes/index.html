@@ -8,25 +8,31 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-cover bg-center bg-no-repeat min-h-screen" style="background-image: url('{% static 'images/paciente.jpeg' %}')">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <form class="form-inline my-2 my-lg-0">
-                {% if user.is_authenticated %}
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a style="font-size:120%" class="nav-link">{{ user.username }}</a></li>
-                    <li><a style="font-size:120%; padding-right:20px" class="nav-link" href="/logout">Log out</a></li>
-                </ul>
-                {% else %}
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a style="font-size:120%; padding-right:20px" class="navbar-link" href="/login/auth0">Login</a></li>
-                </ul>
-                {% endif %}
-        </form>
 
+    <!-- Barra superior fija -->
+    <div style="
+        width: 100%;
+        background-color: #f8f9fa;
+        padding: 10px 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        border-bottom: 1px solid #ddd;
+    ">
+        {% if user.is_authenticated %}
+            <span style="font-size: 120%; margin-right: 20px;">{{ user.username }}</span>
+            <a style="font-size: 120%; padding-right: 20px;" class="nav-link" href="/logout">Log out</a>
+        {% else %}
+            <a style="font-size: 120%; padding-right: 20px;" class="nav-link" href="/login/auth0">Login</a>
+        {% endif %}
     </div>
-    
-    
-    <!-- Contenedor centrador -->
-    <div class="flex items-center justify-center min-h-screen">
+
+    <!-- Contenido principal centrado -->
+    <div class="flex items-center justify-center min-h-screen pt-24">
         <div class="bg-white p-10 rounded-2xl shadow-xl text-center max-w-md w-full">
             <h1 class="text-2xl font-bold mb-6 text-gray-800">Bienvenido al sistema de gestión de pacientes</h1>
             <div class="space-y-4">
@@ -42,6 +48,8 @@
             </div>
         </div>
     </div>
+
 </body>
 </html>
+
 
