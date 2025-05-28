@@ -8,6 +8,23 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-cover bg-center bg-no-repeat min-h-screen" style="background-image: url('{% static 'images/paciente.jpeg' %}')">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <form class="form-inline my-2 my-lg-0">
+                {% if user.is_authenticated %}
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a style="font-size:120%" class="nav-link">{{ user.username }}</a></li>
+                    <li><a style="font-size:120%; padding-right:20px" class="nav-link" href="/logout">Log out</a></li>
+                </ul>
+                {% else %}
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a style="font-size:120%; padding-right:20px" class="navbar-link" href="/login/auth0">Login</a></li>
+                </ul>
+                {% endif %}
+        </form>
+
+    </div>
+    
+    
     <!-- Contenedor centrador -->
     <div class="flex items-center justify-center min-h-screen">
         <div class="bg-white p-10 rounded-2xl shadow-xl text-center max-w-md w-full">
