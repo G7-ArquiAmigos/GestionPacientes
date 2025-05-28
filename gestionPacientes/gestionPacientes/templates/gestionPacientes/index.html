@@ -13,13 +13,13 @@
         <div class="bg-white p-10 rounded-2xl shadow-xl text-center max-w-md w-full">
             <h1 class="text-2xl font-bold mb-6 text-gray-800">Bienvenido al sistema de gestión de pacientes</h1>
             <div class="space-y-4">
-                <a href="{% url '/pacientes/' %} class="block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-xl transition duration-200">
+                <a href="{% url 'pacientes_view' %} class="block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-xl transition duration-200">
                     Crear paciente
                 </a>
-                <a href="{% url 'nombre_de_la_url' %} class="block bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-xl transition duration-200">
+                <a href="{% url 'pacientes_view' %} class="block bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-xl transition duration-200">
                     Ver paciente
                 </a>
-                <a href="{% url '/pacientes/' %} class="block bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded-xl transition duration-200">
+                <a href="{% url 'pacientes_view' %} class="block bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded-xl transition duration-200">
                     Ver todos los pacientes
                 </a>
             </div>
