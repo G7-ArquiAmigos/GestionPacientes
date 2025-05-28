@@ -4,11 +4,11 @@ from django.http import HttpResponse
 from django.core import serializers
 import json
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.decorators import login_required
 from gestionPacientes.auth0backend import getRole
 
 
-
-@csrf_exempt
+@login_required
 def pacientes_view(request):
     if getRole(request) == "Medico":
         if request.method == 'GET':
@@ -30,7 +30,7 @@ def pacientes_view(request):
     else:
         return HttpResponse("Paciente no autorizado")
 
-@csrf_exempt
+@login_required
 def paciente_view(request,pk):
     if getRole(request) == "Medico":
         if request.method == 'GET':

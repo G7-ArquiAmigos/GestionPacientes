@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'sistemaHospitalario',
     'paciente',
     'gestionPacientes',
-    'social_django'
+    'social_django',
     ]
 
 MIDDLEWARE = [
@@ -150,6 +150,6 @@ SOCIAL_AUTH_AUTH0_SCOPE = [
 ]
 
 AUTHENTICATION_BACKENDS = {
-    'historiasClinicas.auth0backend.Auth0',
+    'gestionPacientes.auth0backend.Auth0',
     'django.contrib.auth.backends.ModelBackend',
 }
