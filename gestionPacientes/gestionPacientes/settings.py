@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -134,13 +135,17 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 LOGIN_URL = "/login/auth0"
-LOGIN_REDIRECT_URL = "/home/"
+LOGIN_REDIRECT_URL = "http://34.10.145.188:8000/home"
 LOGOUT_REDIRECT_URL = "https://dev-znond25bgndcf8ju.us.auth0.com/v2/logout?returnTo=http%3A%2F%2F34.10.145.188:8000/home"
 
 SOCIAL_AUTH_TRAILING_SLASH = False  # Remove end slash from routes
 SOCIAL_AUTH_AUTH0_DOMAIN = 'dev-znond25bgndcf8ju.us.auth0.com'
 SOCIAL_AUTH_AUTH0_KEY = 'RBRPOt5I9W9zvqer4MyiNlARPvKVxbln'
 SOCIAL_AUTH_AUTH0_SECRET = 'xsV5A8yPsPW5ZOaGUrWMGQrBO3nKSLXMVwg0B7z2v7YjcIDky-gCDJx0_KBizHsU'
+
+KONG_BASE_URL = config('http://34.10.145.188:8000')
+
+SOCIAL_AUTH_AUTH0_CALLBACK_URL = f'{KONG_BASE_URL}/complete/auth0/'
 
 SOCIAL_AUTH_AUTH0_SCOPE = [
     'openid',
