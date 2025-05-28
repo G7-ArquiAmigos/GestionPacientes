@@ -134,7 +134,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 LOGIN_URL = "/login/auth0"
-LOGIN_REDIRECT_URL = "http://34.10.145.188:8000/home"
+LOGIN_REDIRECT_URL = "http://34.10.145.188:8000/home/"
 LOGOUT_REDIRECT_URL = "https://dev-znond25bgndcf8ju.us.auth0.com/v2/logout?returnTo=http%3A%2F%2F34.10.145.188:8000/home"
 
 SOCIAL_AUTH_TRAILING_SLASH = False  # Remove end slash from routes
@@ -143,7 +143,8 @@ SOCIAL_AUTH_AUTH0_KEY = 'RBRPOt5I9W9zvqer4MyiNlARPvKVxbln'
 SOCIAL_AUTH_AUTH0_SECRET = 'xsV5A8yPsPW5ZOaGUrWMGQrBO3nKSLXMVwg0B7z2v7YjcIDky-gCDJx0_KBizHsU'
 
 
-SOCIAL_AUTH_AUTH0_CALLBACK_URL = 'http://34.10.145.188:8000/complete/auth0/'
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'http://34.10.145.188:8000/home/'
+SOCIAL_AUTH_LOGIN_ERROR_URL = 'http://34.10.145.188:8000/login/'
 
 SOCIAL_AUTH_AUTH0_SCOPE = [
     'openid',
@@ -155,4 +156,5 @@ SOCIAL_AUTH_AUTH0_SCOPE = [
 AUTHENTICATION_BACKENDS = {
     'gestionPacientes.auth0backend.Auth0',
     'django.contrib.auth.backends.ModelBackend',
+    'social_core.backends.auth0.Auth0OAuth2',
 }

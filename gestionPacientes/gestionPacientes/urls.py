@@ -19,10 +19,10 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/',views.index),
+    path('home/', views.index, name='home'),
     path('pacientes/', include('paciente.urls')),
     path('', views.index),
     path(r'', include('django.contrib.auth.urls')),
-    path(r'', include('social_django.urls')),
+    path(r'', include('social_django.urls' , namespace='social')),
     path('login/auth0/', views.auth0_login, name='auth0_login'),
 ]
