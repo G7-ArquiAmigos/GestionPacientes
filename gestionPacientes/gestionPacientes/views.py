@@ -12,7 +12,7 @@ def auth0_login(request):
     params = {
         'client_id': settings.SOCIAL_AUTH_AUTH0_KEY,
         'response_type': 'code',
-        'redirect_uri': 'http://34.10.145.188:8000/complete/auth0/',  # <-- debe coincidir con Auth0
+        'redirect_uri': 'http://34.10.145.188:8000/gestionPacientes/complete/auth0/',  # <-- debe coincidir con Auth0
         'scope': 'openid profile email',
         'state': 'secure_random_state_here'  # puedes usar una función para generarlo
     }
