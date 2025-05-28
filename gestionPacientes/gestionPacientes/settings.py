@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'sistemaHospitalario',
     'paciente',
-    'gestionPacientes'
+    'gestionPacientes',
+    'social_django'
     ]
 
 MIDDLEWARE = [
@@ -130,3 +131,25 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+LOGIN_URL = "/login/auth0"
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "https://dev-znond25bgndcf8ju.us.auth0.com/v2/logout?returnTo=http%3A%2F%2F35.226.197.191:8000"
+
+SOCIAL_AUTH_TRAILING_SLASH = False  # Remove end slash from routes
+SOCIAL_AUTH_AUTH0_DOMAIN = 'dev-znond25bgndcf8ju.us.auth0.com'
+SOCIAL_AUTH_AUTH0_KEY = 'RBRPOt5I9W9zvqer4MyiNlARPvKVxbln'
+SOCIAL_AUTH_AUTH0_SECRET = 'xsV5A8yPsPW5ZOaGUrWMGQrBO3nKSLXMVwg0B7z2v7YjcIDky-gCDJx0_KBizHsU'
+
+SOCIAL_AUTH_AUTH0_SCOPE = [
+    'openid',
+    'profile',
+    'email',
+    'role',
+]
+
+AUTHENTICATION_BACKENDS = {
+    'historiasClinicas.auth0backend.Auth0',
+    'django.contrib.auth.backends.ModelBackend',
+}
