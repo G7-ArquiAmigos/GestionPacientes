@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -143,9 +142,8 @@ SOCIAL_AUTH_AUTH0_DOMAIN = 'dev-znond25bgndcf8ju.us.auth0.com'
 SOCIAL_AUTH_AUTH0_KEY = 'RBRPOt5I9W9zvqer4MyiNlARPvKVxbln'
 SOCIAL_AUTH_AUTH0_SECRET = 'xsV5A8yPsPW5ZOaGUrWMGQrBO3nKSLXMVwg0B7z2v7YjcIDky-gCDJx0_KBizHsU'
 
-KONG_BASE_URL = config('http://34.10.145.188:8000')
 
-SOCIAL_AUTH_AUTH0_CALLBACK_URL = f'{KONG_BASE_URL}/complete/auth0/'
+SOCIAL_AUTH_AUTH0_CALLBACK_URL = 'http://34.10.145.188:8000/complete/auth0/'
 
 SOCIAL_AUTH_AUTH0_SCOPE = [
     'openid',
