@@ -133,7 +133,7 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-LOGIN_URL = "gestionPacientes/login/auth0"
+LOGIN_URL = "login/auth0"
 LOGIN_REDIRECT_URL = "http://34.10.145.188:8000/gestionPacientes/home/"
 LOGOUT_REDIRECT_URL = "https://dev-znond25bgndcf8ju.us.auth0.com/v2/logout?returnTo=http%3A%2F%2F34.10.145.188:8000/gestionPacientes/home"
 
