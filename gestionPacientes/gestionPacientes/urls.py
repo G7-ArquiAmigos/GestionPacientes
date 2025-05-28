@@ -20,7 +20,7 @@ from . import views
 urlpatterns = [
     path('gestionPacientes/admin/', admin.site.urls),
     path('gestionPacientes/home/', views.index, name='home'),
-    path('gestionPacientes/', include('paciente.urls')),
+    path('', include('paciente.urls')),
     path('gestionPacientes/', views.index),
     path(r'', include('django.contrib.auth.urls')),
     path(r'', include('social_django.urls' , namespace='social')),
