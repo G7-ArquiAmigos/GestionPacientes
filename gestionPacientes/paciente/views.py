@@ -11,16 +11,19 @@ def pacientes_view(request):
         id = request.GET.get("id", None)
         if id:
             paciente_dto = pl.get_paciente(id)
-            paciente = serializers.serialize('json', [paciente_dto,])
-            return HttpResponse(paciente, 'application/json')
+            paciente = serializers.serialize('json', [paciente_dto])
+            return HttpResponse(paciente, content_type='application/json')
         else:
             pacientes_dto = pl.get_pacientes()
             pacientes = serializers.serialize('json', pacientes_dto)
-            return HttpResponse(pacientes, 'application/json')
+            return HttpResponse(pacientes, content_type='application/json')
+
     if request.method == 'POST':
-        paciente.dto = pl.create_paciente(json.loads(request.body))
-        paciente = serializers.serialize('json', [paciente_dto,])
-        return HttpResponse(paciente, 'application/json')
+        paciente_data = json.loads(request.body)
+        paciente_dto = pl.create_paciente(paciente_data)
+        paciente = serializers.serialize('json', [paciente_dto])
+        return HttpResponse(paciente, content_type='application/json')
+
 @csrf_exempt
 def paciente_view(request,pk):
     if request.method == 'GET':
