@@ -24,4 +24,5 @@ urlpatterns = [
     path('', views.index),
     path(r'', include('django.contrib.auth.urls')),
     path(r'', include('social_django.urls')),
+    path('login/auth0/', views.auth0_login, name='auth0_login'),
 ]
