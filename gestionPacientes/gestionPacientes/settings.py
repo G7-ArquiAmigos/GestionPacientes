@@ -144,7 +144,7 @@ SOCIAL_AUTH_AUTH0_SECRET = 'xsV5A8yPsPW5ZOaGUrWMGQrBO3nKSLXMVwg0B7z2v7YjcIDky-gC
 
 
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'http://34.10.145.188:8000/gestionPacientes/home/'
-SOCIAL_AUTH_LOGIN_ERROR_URL = 'http://34.10.145.188:8000/gestionPacientes/ogin/'
+SOCIAL_AUTH_LOGIN_ERROR_URL = 'http://34.10.145.188:8000/gestionPacientes/login/'
 
 SOCIAL_AUTH_AUTH0_SCOPE = [
     'openid',
