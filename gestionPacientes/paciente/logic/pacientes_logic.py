@@ -9,9 +9,16 @@ def get_paciente(pac_pk):
     return paciente
 
 def create_paciente(pac):
-    paciente = Paciente(name=pac["name"])
+    paciente = Paciente(
+        nombre=pac["nombre"],
+        edad=pac["edad"],
+        genero=pac["genero"],
+        contactoEmergencia=pac["contactoEmergencia"],
+        estado=pac["estado"]
+    )
     paciente.save()
     return paciente
+
 
 def update_paciente(pac_pk, new_pac):
     paciente = get_paciente(pac_pk)
