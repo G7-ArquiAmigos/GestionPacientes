@@ -8,7 +8,6 @@ class Paciente(models.Model):
     genero = models.CharField(max_length=50)
     contactoEmergencia = models.CharField(max_length=50)
     estado = models.CharField(max_length=50)
-    sistemaHospitalario = models.ForeignKey(sistemaHospitalario, on_delete=models.CASCADE)
 
     def __str__(self):
         return '%s' % (self.nombre)
