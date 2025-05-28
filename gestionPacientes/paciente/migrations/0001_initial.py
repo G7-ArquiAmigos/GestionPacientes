@@ -22,7 +22,6 @@ class Migration(migrations.Migration):
                 ('genero', models.CharField(max_length=50)),
                 ('contactoEmergencia', models.CharField(max_length=50)),
                 ('estado', models.CharField(max_length=50)),
-                ('sistemaHospitalario', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='sistemaHospitalario.sistemahospitalario')),
             ],
         ),
     ]
