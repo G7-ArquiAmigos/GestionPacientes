@@ -27,7 +27,7 @@
             <span style="font-size: 120%; margin-right: 20px;">{{ user.username }}</span>
             <a style="font-size: 120%; padding-right: 20px;" class="nav-link" href="/logout">Log out</a>
         {% else %}
-            <a style="font-size: 120%; padding-right: 20px;" class="nav-link" href="{% url 'auth0_login' %}">Login</a>
+            <a style="font-size: 120%; padding-right: 20px;" class="nav-link" href="/login/auth0">Login</a>
         {% endif %}
     </div>
 
