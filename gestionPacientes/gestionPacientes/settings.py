@@ -142,7 +142,7 @@ SOCIAL_AUTH_TRAILING_SLASH = False  # Remove end slash from routes
 SOCIAL_AUTH_AUTH0_DOMAIN = 'dev-znond25bgndcf8ju.us.auth0.com'
 SOCIAL_AUTH_AUTH0_KEY = 'RBRPOt5I9W9zvqer4MyiNlARPvKVxbln'
 SOCIAL_AUTH_AUTH0_SECRET = 'xsV5A8yPsPW5ZOaGUrWMGQrBO3nKSLXMVwg0B7z2v7YjcIDky-gCDJx0_KBizHsU'
-
+SOCIAL_AUTH_AUTH0_REDIRECT_URI = 'http://35.223.197.29:8080/gestionPacientes/complete/auth0'
 
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'http://34.10.145.188:8000/gestionPacientes/home/'
 SOCIAL_AUTH_LOGIN_ERROR_URL = 'http://34.10.145.188:8000/gestionPacientes/login/'
