@@ -28,7 +28,7 @@ def pacientes_view(request):
             paciente = serializers.serialize('json', [paciente_dto])
             return HttpResponse(paciente, content_type='application/json')
     else:
-        return HttpResponse("Paciente no autorizado")
+        return render(request, 'paciente/index.html')
 
 @login_required
 def paciente_view(request,pk):
@@ -43,7 +43,7 @@ def paciente_view(request,pk):
             paciente = serializers.serialize('json', [paciente_dto,])
             return HttpResponse(paciente, 'application/json')
     else: 
-        return HttpResponse("Paciente no autorizado")
+        return render(request, 'paciente/index.html')
 
 
 
