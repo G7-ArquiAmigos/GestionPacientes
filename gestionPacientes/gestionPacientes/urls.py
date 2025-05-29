@@ -23,8 +23,6 @@ urlpatterns = [
     path('gestionPacientes/admin/', admin.site.urls),
     path('gestionPacientes/home/', views.index, name='home'),
     path('gestionPacientes/', include('paciente.urls')),
-    path('gestionPacientes/', include('django.contrib.auth.urls')),
-    path('gestionPacientes/', include('social_django.urls')), # <--- ¡ASEGÚRATE DE QUE ESTÉ ASÍ!
-    path('gestionPacientes/login/auth0/', views.auth0_login, name='auth0_login'),
-    path('gestionPacientes/auth/complete/auth0?/', lambda request: redirect('/gestionPacientes/complete/auth0?/' + request.META['QUERY_STRING'])),
+    path(r'', include('django.contrib.auth.urls')),
+    path(r'', include('social_django.urls')), # <--- ¡ASEGÚRATE DE QUE ESTÉ ASÍ!
 ]
