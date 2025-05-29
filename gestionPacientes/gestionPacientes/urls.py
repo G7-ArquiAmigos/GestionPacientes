@@ -15,6 +15,7 @@ Including another URLconf
 """
 # gestionPacientes/urls.py
 from django.contrib import admin
+from django.shortcuts import redirect
 from django.urls import path, include
 from . import views
 
@@ -25,4 +26,5 @@ urlpatterns = [
     path('gestionPacientes/', include('django.contrib.auth.urls')),
     path('gestionPacientes/', include('social_django.urls')), # <--- ¡ASEGÚRATE DE QUE ESTÉ ASÍ!
     path('gestionPacientes/login/auth0/', views.auth0_login, name='auth0_login'),
+    path('gestionPacientes/auth/complete/auth0?/', lambda request: redirect('/gestionPacientes/complete/auth0?/' + request.META['QUERY_STRING'])),
 ]
