@@ -4,7 +4,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Gestión de Pacientes</title>
+    <title>Gestión de Examenes</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-cover bg-center bg-no-repeat min-h-screen" style="background-image: url('{% static 'images/paciente.jpeg' %}')">
@@ -34,7 +34,7 @@
     <!-- Contenido principal centrado -->
     <div class="flex items-center justify-center min-h-screen pt-24">
         <div class="bg-white p-10 rounded-2xl shadow-xl text-center max-w-md w-full">
-            <h1 class="text-2xl font-bold mb-6 text-gray-800">Bienvenido al sistema de gestión de pacientes</h1>
+            <h1 class="text-2xl font-bold mb-6 text-gray-800">Bienvenido al sistema de gestión de examenes</h1>
             <div class="space-y-4">
 
                 <!-- Formulario para ver paciente por ID -->
@@ -43,13 +43,13 @@
                         class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-400">
                     <button type="submit"
                         class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-xl transition duration-200">
-                        Ver paciente
+                        Ver examen
                     </button>
                 </form>
 
                 <!-- Botón para ver todos los pacientes -->
                 <a href="{% url 'pacientes_view' %}" class="block bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded-xl transition duration-200">
-                    Ver todos los pacientes
+                    Ver todos los examenes
                 </a>
             </div>
         </div>
