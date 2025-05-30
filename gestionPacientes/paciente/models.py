@@ -3,11 +3,11 @@ from django.db import models
 from sistemaHospitalario.models import sistemaHospitalario
 
 class Paciente(models.Model):
-    nombre = models.CharField(max_length=50)
-    edad = models.IntegerField()
-    genero = models.CharField(max_length=50)
-    contactoEmergencia = models.CharField(max_length=50)
-    estado = models.CharField(max_length=50)
+    nombreExamen = models.CharField(max_length=50)
+    hora = models.IntegerField()
+    paciente = models.CharField(max_length=50)
+    doctor = models.CharField(max_length=50)
+    consultorio = models.CharField(max_length=50)
 
     def __str__(self):
         return '%s' % (self.nombre)
