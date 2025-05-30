@@ -80,8 +80,8 @@ WSGI_APPLICATION = 'gestionPacientes.wsgi.application'
 DATABASES = {
      'default': {
          'ENGINE': 'django.db.backends.postgresql_psycopg2',
-         'NAME': 'monitoring_db',
-         'USER': 'monitoring_user',
+         'NAME': 'measurements_db',
+         'USER': 'measurements_user',
          'PASSWORD': 'isis2503',
          'HOST': '10.128.0.84',
          'PORT': '5432',
